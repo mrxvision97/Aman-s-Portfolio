@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a23;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #00d4ff, #39ff14);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #39ff14, #bf00ff);
+}
+
+/* Glassmorphism utility class */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 
+    0 0 5px #00d4ff,
+    0 0 10px #00d4ff,
+    0 0 15px #00d4ff,
+    0 0 20px #00d4ff;
+}
+
+.neon-glow-green {
+  box-shadow: 
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 15px #39ff14;
+}
+
+.neon-glow-purple {
+  box-shadow: 
+    0 0 5px #bf00ff,
+    0 0 10px #bf00ff,
+    0 0 15px #bf00ff;
+}
+
+/* Text glow effects */
+.text-glow {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor;
+}
+
+/* Grid background */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Matrix effect */
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.matrix-char {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: #39ff14;
+  opacity: 0.3;
+  animation: matrix 20s linear infinite;
+}
+
+/* Loading states */
+.skeleton {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.1) 25%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Enhanced animations */
+.animate-gradient {
+  background: linear-gradient(-45deg, #00d4ff, #39ff14, #bf00ff, #00d4ff);
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+}
+
+.stagger-animation {
+  animation-delay: calc(var(--stagger) * 0.1s);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .glass, .glass-strong {
+    backdrop-filter: blur(5px);
+  }
+  
+  .neon-glow,
+  .neon-glow-green,
+  .neon-glow-purple {
+    box-shadow: none;
+    border: 1px solid currentColor;
+  }
+}
+
+/* Technology icons */
+.tech-icon {
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 10px currentColor);
+}
